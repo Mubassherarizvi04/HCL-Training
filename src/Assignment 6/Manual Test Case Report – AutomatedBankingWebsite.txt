@@ -1,0 +1,256 @@
+/////Manual Test Case Report – Automated Banking Website
+
+********Module1 : User Registration / Login
+--------------Test Case 1-----------------
+Test case Id: AB_TC_01
+Test case Title: Verify user registration with valid details
+Module Name: Registration
+Preconditions: User must be on registration page
+Test steps:
+Open Automated Banking website
+Click on Register
+Enter required details
+Click Submit/Register
+Test data:
+Name: Aman Verma
+Email: amanverma@gmail.com
+Mobile: 9876543210
+Password: Aman@123
+Expected result:
+User should register successfully and redirect to login page
+Actual Result: Registration successful
+Status: Pass
+Remarks: Working properly
+
+-----------Test Case 2--------------
+Test case Id: AB_TC_02
+Test case Title: Verify registration with already registered email
+Module Name: Registration
+Preconditions: Email should already exist in database
+Test steps:
+Open registration form
+Enter already registered email
+Enter other details
+Click Register
+Test data: Email: amanverma@gmail.com
+Expected result:
+System should show message “Email already exists”
+Actual Result: Error message shown
+Status: Pass
+Remarks: Proper validation
+
+----------Test Case 3-------------
+Test case Id: AB_TC_03
+Test case Title: Verify login with valid user credentials
+Module Name: Login
+Preconditions: User must be registered
+Test steps:
+Open login page
+Enter valid username/email
+Enter valid password
+Click Login
+Test data:
+Email: amanverma@gmail.com
+Password: Aman@123
+Expected result:
+User should login successfully and dashboard should open
+Actual Result: Login successful
+Status: Pass
+Remarks: Dashboard opened
+
+-------------Test Case 4---------
+Test case Id: AB_TC_04
+Test case Title: Verify login with invalid password
+Module Name: Login
+Preconditions: User exists
+Test steps:
+Enter correct email
+Enter wrong password
+Click Login
+Test data:
+Email: amanverma@gmail.com
+Password: wrong@000
+Expected result:
+System should show invalid login error and not open dashboard
+Actual Result: Error shown
+Status: Pass
+Remarks: Works fine
+
+*********** Module2: Account Management
+-----------Test Case 5---------------
+Test case Id: AB_TC_05
+Test case Title: Verify user can view account balance
+Module Name: Account Dashboard
+Preconditions: User logged in successfully
+Test steps:
+Login to banking website
+Go to dashboard
+Check account balance section
+Test data: N/A
+Expected result:
+System should display available balance properly
+Actual Result: Balance displayed
+Status: Pass
+Remarks: Correct amount shown
+
+------------Test Case 6---------------
+Test case Id: AB_TC_06
+Test case Title: Verify user can view account details
+Module Name: Account Details
+Preconditions: User logged in
+Test steps:
+Open Account/Profile section
+Click View Account Details
+Verify account number, name, IFSC
+Test data: N/A
+Expected result:
+Account details should be displayed correctly
+Actual Result: Account info visible
+Status: Pass
+Remarks: No mismatch
+
+************** Module3: Fund Transfer
+--------Test Case 7--------------
+Test case Id: AB_TC_07
+Test case Title: Transfer money with valid details
+Module Name: Fund Transfer
+Preconditions:
+User logged in
+Beneficiary exists or user can add beneficiary
+Test steps:
+Go to Fund Transfer section
+Select beneficiary account
+Enter amount
+Click Transfer
+Confirm OTP
+Test data:
+Beneficiary: Ravi Kumar
+Account: 1234567890
+Amount: 2000
+OTP: 123456
+Expected result:
+Money should be transferred successfully and transaction ID generated
+Actual Result: Transfer successful
+Status: Pass
+Remarks: Transaction ID generated
+
+---------------Test Case 8------------------
+Test case Id: AB_TC_08
+Test case Title: Verify transfer fails if amount is greater than balance
+Module Name: Fund Transfer
+Preconditions: User logged in, low balance
+Test steps:
+Go to Transfer page
+Enter high amount
+Click Transfer
+Test data: Amount: 500000
+Expected result:
+System should show message “Insufficient balance”
+Actual Result: Validation message shown
+Status: Pass
+Remarks: Correct message
+
+-----------Test Case 9---------------
+Test case Id: AB_TC_09
+Test case Title: Verify transfer fails if amount is blank/zero
+Module Name: Fund Transfer
+Preconditions: User logged in
+Test steps:
+Go to Fund Transfer
+Select beneficiary
+Keep amount blank or 0
+Click Transfer
+Test data: Amount: blank / 0
+Expected result:
+System should show validation “Enter valid amount”
+Actual Result: Validation displayed
+Status: Pass
+Remarks: Correct
+
+******** Module3: Beneficiary Management
+-----------Test Case 10--------------
+Test case Id: AB_TC_10
+Test case Title: Add beneficiary with valid details
+Module Name: Beneficiary
+Preconditions: User logged in
+Test steps:
+Go to Beneficiary section
+Click Add Beneficiary
+Enter details
+Click Save
+Test data:
+Name: Ravi Kumar
+Account No: 1234567890
+IFSC: SBI0000245
+Expected result:
+Beneficiary should be added successfully
+Actual Result: Beneficiary added
+Status: Pass
+Remarks: Shown in list
+
+-------Test Case 11----------
+
+Test case Id: AB_TC_11
+Test case Title: Add beneficiary with invalid IFSC
+Module Name: Beneficiary
+Preconditions: User logged in
+Test steps:
+Click Add Beneficiary
+Enter wrong IFSC code
+Click Save
+Test data: IFSC: 12345
+Expected result:
+System should show validation for incorrect IFSC
+Actual Result: Message displayed
+Status: Pass
+Remarks: Validation works
+
+*************Module 4: Transaction History
+-------------Test Case 12------------
+Test case Id: AB_TC_12
+Test case Title: Verify user can view transaction history
+Module Name: Transaction History
+Preconditions: User logged in and has transactions
+Test steps:
+Login
+Go to Transaction History
+Verify past transactions list
+Test data: N/A
+Expected result:
+System should show transaction list with date, amount, status
+Actual Result: Transaction list displayed
+Status: Pass
+Remarks: Proper details shown
+
+-----------Test Case 13-------------
+Test case Id: AB_TC_13
+Test case Title: Verify transaction history filter by date
+Module Name: Transaction History
+Preconditions: Transactions available
+Test steps:
+Open transaction history page
+Select from date and to date
+Click Apply Filter
+Test data:
+From: 01/01/2026
+To: 15/01/2026
+Expected result:
+Only filtered transactions should show
+Actual Result: Filter applied successfully
+Status: Pass
+Remarks: Works correctly
+
+************* Module5: Logout
+-------------Test Case 14--------------
+Test case Id: AB_TC_14
+Test case Title: Verify logout functionality
+Module Name: Logout
+Preconditions: User logged in
+Test steps:
+Click on profile/menu
+Click Logout
+Test data: N/A
+Expected result:
+User should logout and redirect to login page
+Actual Result: Logout successful
+Status: Pass
