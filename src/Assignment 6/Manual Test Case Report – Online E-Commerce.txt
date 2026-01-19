@@ -1,0 +1,282 @@
+Manual Test Case Report – Online E-Commerce Website
+*****Module1: User Registration / Login
+--------Test Case 1------
+Test case Id: EC_TC_01
+Test case Title: Verify user registration with valid details
+Module Name: Registration
+Preconditions: User should be on registration page
+Test steps:
+Open e-commerce website
+Click on Register/Sign Up
+Enter all valid details
+Click on Register button
+Test data:
+Name: Shruti Jain
+Email: shrutijain@gmail.com
+Mobile: 9876543210
+Password: Shruti@123
+Expected result:
+User should register successfully and redirect to login/home page
+Actual Result: Registration done successfully
+Status: Pass
+Remarks: Working properly
+
+-------Test Case 2------
+Test case Id: EC_TC_02
+Test case Title: Verify registration with existing email id
+Module Name: Registration
+Preconditions: Email already registered in system
+Test steps:
+Open Register page
+Enter already registered email
+Fill all other details
+Click Register
+Test data:
+Email: shrutijain@gmail.com
+Expected result:
+System should show message like “Email already exists”
+Actual Result: Message displayed
+Status: Pass
+Remarks: Validation ok
+
+----------Test Case 3---------
+Test case Id: EC_TC_03
+Test case Title: Verify login with valid credentials
+Module Name: Login
+Preconditions: User should already exist
+Test steps:
+Open Login page
+Enter valid email and password
+Click Login
+Test data:
+Email: shrutijain@gmail.com
+Password: Shruti@123
+Expected result:
+User should login successfully and dashboard/home should open
+Actual Result: Logged in successfully
+Status: Pass
+Remarks: Correct
+
+-------Test Case 4-----------
+Test case Id: EC_TC_04
+Test case Title: Verify login with invalid password
+Module Name: Login
+Preconditions: User exists
+Test steps:
+Open login page
+Enter correct email
+Enter wrong password
+Click Login
+Test data:
+Email: shrutijain@gmail.com
+Password: wrong@123
+Expected result:
+System should show error “Invalid credentials” and not login
+Actual Result: Error message shown
+Status: Pass
+Remarks: Works
+
+
+
+********* Module2: Product Search & View
+---------Test Case 5------------
+Test case Id: EC_TC_05
+Test case Title: Verify search product by keyword
+Module Name: Product Search
+Preconditions: Products should be available
+Test steps:
+Open homepage
+Enter keyword in search bar
+Click search icon
+Test data: Keyword: “Shoes”
+Expected result:
+System should show related product list
+Actual Result: Products displayed
+Status: Pass
+Remarks: Search working
+
+-------Test Case 6----------
+Test case Id: EC_TC_06
+Test case Title: Verify product details page opens correctly
+Module Name: Product Details
+Preconditions: Product list available
+Test steps:
+Search product
+Click on any product
+Check details
+Test data: Product: Nike Shoes
+Expected result:
+Product detail page should show image, price, description, add to cart
+Actual Result: Detail page shown correctly
+Status: Pass
+Remarks: Ok
+
+
+
+
+********* Module3: Add to Cart / Cart Operations
+--------Test Case 7-------------
+Test case Id: EC_TC_07
+Test case Title: Verify Add to Cart functionality
+Module Name: Cart
+Preconditions: User logged in, product available
+Test steps:
+Open product details page
+Select size/quantity (if available)
+Click Add to Cart
+Test data:
+Product: Nike Shoes
+Qty: 1
+Expected result:
+Product should be added to cart with correct details
+Actual Result: Added successfully
+Status: Pass
+Remarks: Fine
+
+-------Test Case 8---------
+Test case Id: EC_TC_08
+Test case Title: Verify update quantity in cart
+Module Name: Cart
+Preconditions: Product already in cart
+Test steps:
+Open cart page
+Increase quantity
+Check total amount
+Test data: Qty: 2
+Expected result:
+Quantity should update and total price recalculated
+Actual Result: Updated
+Status: Pass
+Remarks: Calculation correct
+
+-----------Test Case 9---------------
+Test case Id: EC_TC_09
+Test case Title: Verify remove product from cart
+Module Name: Cart
+Preconditions: Product exists in cart
+Test steps:
+Open cart page
+Click Remove/Delete icon
+Confirm remove
+Test data: Product: Nike Shoes
+Expected result:
+Product should be removed from cart
+Actual Result: Removed successfully
+Status: Pass
+Remarks: Ok
+
+
+
+
+
+************** Module4: Checkout & Address
+------------Test Case 10----------
+Test case Id: EC_TC_10
+Test case Title: Verify checkout with valid shipping address
+Module Name: Checkout
+Preconditions: User logged in, cart should have product
+Test steps:
+Go to cart
+Click Checkout
+Enter shipping address
+Click Continue
+Test data:
+Address: 21, MG Road
+City: Indore
+State: MP
+Pincode: 452001
+Expected result:
+System should accept address and move to payment page
+Actual Result: Redirected to payment
+Status: Pass
+Remarks: Address saved
+
+----------------Test Case 11----------------
+Test case Id: EC_TC_11
+Test case Title: Verify checkout with blank address fields
+Module Name: Checkout
+Preconditions: User logged in
+Test steps:
+Click checkout
+Keep address blank
+Click continue
+Test data: Blank
+Expected result:
+System should show validation message for required fields
+Actual Result: Validation message displayed
+Status: Pass
+Remarks: Correct validation
+
+
+
+
+
+***************** Module5: Payment
+-----------Test Case 12-------------------------
+Test case Id: EC_TC_12
+Test case Title: Verify payment using UPI
+Module Name: Payment
+Preconditions: Checkout completed
+Test steps:
+Select payment mode UPI
+Enter UPI ID
+Click Pay
+Test data: UPI ID: shruti@upi
+Expected result:
+Payment should be successful and order should be placed
+Actual Result: Payment done successfully
+Status: Pass
+Remarks: Order confirmed
+
+------------------Test Case 13----------------------
+Test case Id: EC_TC_13
+Test case Title: Verify payment failure with wrong card details
+Module Name: Payment
+Preconditions: Checkout completed
+Test steps:
+Select payment by card
+Enter wrong card details
+Click Pay
+Test data:
+Card no: 1111 2222 3333 4444
+CVV: 000
+Expected result:
+Payment should fail and user should remain on payment page
+Actual Result: Error shown
+Status: Pass
+Remarks: No order placed
+
+
+
+
+************ Module6: Orders / My Account
+------------------Test Case 14---------------------
+Test case Id: EC_TC_14
+Test case Title: Verify order placed successfully
+Module Name: Orders
+Preconditions: Payment successful
+Test steps:
+Place order
+Go to My Orders
+Check latest order details
+Test data: Order ID auto generated
+Expected result:
+Order should appear with correct product name, price, status
+Actual Result: Order visible
+Status: Pass
+Remarks: Proper record maintained
+
+--------------------Test Case 15-----------------
+Test case Id: EC_TC_15
+Test case Title: Verify logout functionality
+Module Name: Logout
+Preconditions: User logged in
+Test steps:
+Click profile button
+Click Logout
+Test data: N/A
+Expected result:
+User should logout and redirect to login/home page
+Actual Result: Logged out successfully
+Status: Pass
+Remarks: Done
