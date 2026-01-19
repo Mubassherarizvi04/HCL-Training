@@ -1,0 +1,184 @@
+//TEST CASE REPORT  OF Travel Booking Platform
+
+***Module1:User Registration / Login
+----------Test Case 1-----------
+Test case Id: TB_TC_01
+Test case Title: Verify user registration with valid details
+Module Name: Registration
+Preconditions: User should be on registration page
+Test steps:
+Open Travel Booking Platform
+Go to Register page
+Enter name, email, phone, password
+Click on Register button
+Test data:
+Name: Priya Sharma
+Email: priyasharma@gmail.com
+Phone: 9876543210
+Password: Priya@123
+Expected result:
+User should register successfully and redirect to login/home page
+Actual Result: User registered successfully
+Status: Pass
+Remarks: Working fine
+
+--------------TEST CASE 2----------------
+
+Test case Id: TB_TC_02
+Test case Title: Verify registration with already registered email
+Module Name: Registration
+Preconditions: Email already exists in database
+Test steps:
+Open Register page
+Enter already registered email
+Fill remaining details
+Click Register
+Test data:
+Email: priyasharma@gmail.com
+Expected result:
+System should show message “Email already exists”
+Actual Result: Error message shown
+Status: Pass
+Remarks: Proper validation
+
+------------TEST CASE 3-------
+Test case Id: TB_TC_03
+Test case Title: Verify login using valid credentials
+Module Name: Login
+Preconditions: User should be registered
+Test steps:
+Open Login page
+Enter valid email and password
+Click Login
+Test data:
+Email: priyasharma@gmail.com
+Password: Priya@123
+Expected result:
+User should login successfully and dashboard should open
+Actual Result: Logged in successfully
+Status: Pass
+Remarks: Dashboard opened
+
+--------Test Case 4------
+
+Test case Id: TB_TC_04
+Test case Title: Verify login using invalid password
+Module Name: Login
+Preconditions: User exists
+Test steps:
+Enter correct email
+Enter wrong password
+Click Login
+Test data:
+Email: priyasharma@gmail.com
+Password: xyz111
+Expected result:
+System should not login and display message “Invalid credentials”
+Actual Result: Error displayed
+Status: Pass
+Remarks: Correct error shown
+
+
+
+****Module2 : Search & Filter
+-----------Test Case 5------------
+
+Test case Id: TB_TC_05
+Test case Title: Search flights with valid source and destination
+Module Name: Flight Search
+Preconditions: User on flight search page
+Test steps:
+Open flights section
+Select source city
+Select destination city
+Select travel date
+Click Search
+Test data:
+Source: Delhi
+Destination: Mumbai
+Date: 20/01/2026
+Expected result:
+System should display available flights list
+Actual Result: Flights displayed successfully
+Status: Pass
+Remarks: Data loaded properly
+
+
+-------Test Case 6------
+Test case Id: TB_TC_06
+Test case Title: Verify filter by price (low to high)
+Module Name: Flight Search
+Preconditions: Flight results should be displayed
+Test steps:
+Search flights
+Select filter “Price Low to High”
+Check sorting order
+Test data: Filter: Low to High
+Expected result:
+Flights should be arranged in increasing price order
+Actual Result: Sorted correctly
+Status: Pass
+Remarks: Proper sorting
+
+
+*****MODULE3: Booking Process (Flight/Hotel)
+ ------Test Case 7------
+Test Case 7
+
+Test case Id: TB_TC_07
+Test case Title: Book flight ticket with valid passenger details
+Module Name: Flight Booking
+Preconditions: User logged in and flight selected
+Test steps:
+Select flight from list
+Click Book Now
+Enter passenger details
+Confirm booking
+Test data:
+Passenger Name: Rahul Verma
+Age: 24
+Gender: Male
+Mobile: 9876501234
+Expected result:
+Booking should be confirmed and booking id should be generated
+Actual Result: Ticket booked successfully
+Status: Pass
+Remarks: Booking ID generated
+
+
+
+****MODULE4: My Bookings / Cancellation
+-------Test Case 8---------
+
+Test case Id: TB_TC_8
+Test case Title: Verify booking details visible in My Bookings
+Module Name: My Bookings
+Preconditions: Booking completed successfully
+Test steps:
+Login
+Go to My Bookings
+Check latest booking record
+Test data: Booking ID: Auto-generated
+Expected result:
+Booking details should be visible with date and status
+Actual Result: Displayed properly
+Status: Pass
+Remarks: Correct details shown
+
+-----Test Case 9-----------
+
+Test case Id: TB_TC_9
+Test case Title: Cancel booking successfully
+Module Name: Cancellation
+Preconditions: Booking exists and is cancellable
+Test steps:
+Open My Bookings
+Select booking
+Click Cancel
+Confirm cancellation
+Test data: Booking ID: TB_204
+Expected result:
+Booking status should change to Cancelled and refund info should show
+Actual Result: Cancelled successfully
+Status: Pass
+Remarks: Status updated
