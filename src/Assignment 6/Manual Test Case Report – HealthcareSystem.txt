@@ -1,0 +1,270 @@
+////////Manual Test Case Report – Healthcare System
+
+**************Module: User Registration / Login
+------------Test Case 1------------
+Test case Id: HS_TC_01
+Test case Title: Verify patient registration with valid details
+Module Name: Registration
+Preconditions: User should be on registration page
+Test steps:
+Open Healthcare System website
+Click on Register
+Enter valid patient details
+Click Submit/Register
+Test data:
+Name: Neha Sharma
+Email: nehasharma@gmail.com
+Mobile: 9876543210
+Password: Neha@123
+Expected result:
+Patient should be registered successfully and redirected to login page
+Actual Result: Patient registered successfully
+Status: Pass
+Remarks: Working properly
+
+-------------Test Case 2-----------------
+Test case Id: HS_TC_02
+Test case Title: Verify registration with already registered email
+Module Name: Registration
+Preconditions: Email should already exist in database
+Test steps:
+Open registration form
+Enter existing email
+Fill remaining details
+Click Register
+Test data: Email: nehasharma@gmail.com
+Expected result:
+System should display message “Email already exists”
+Actual Result: Error displayed
+Status: Pass
+Remarks: Correct validation
+
+-----------------Test Case 3-------------------------
+Test case Id: HS_TC_03
+Test case Title: Verify login with valid patient credentials
+Module Name: Login
+Preconditions: Patient must be registered
+Test steps:
+Open login page
+Enter valid email
+Enter valid password
+Click Login
+Test data:
+Email: nehasharma@gmail.com
+Password: Neha@123
+Expected result:
+Patient should login successfully and dashboard should open
+Actual Result: Login successful
+Status: Pass
+Remarks: Dashboard opened
+
+--------------Test Case 4--------------------
+Test case Id: HS_TC_04
+Test case Title: Verify login with wrong password
+Module Name: Login
+Preconditions: Patient exists
+Test steps:
+Enter correct email
+Enter wrong password
+Click Login
+Test data:
+Email: nehasharma@gmail.com
+Password: wrong@111
+Expected result:
+System should show invalid credentials message
+Actual Result: Error message displayed
+Status: Pass
+Remarks: Working fine
+
+
+
+******************** Module: Doctor Search / Appointment Booking
+----------------Test Case 5--------------------
+Test case Id: HS_TC_05
+Test case Title: Search doctor by specialization
+Module Name: Doctor Search
+Preconditions: Patient logged in
+Test steps:
+Go to Doctor Search page
+Select specialization
+Click Search
+Test data: Specialization: Cardiologist
+Expected result:
+System should display list of cardiologist doctors
+Actual Result: Doctor list displayed
+Status: Pass
+Remarks: Search working
+
+-----------------Test Case 6------------------
+Test case Id: HS_TC_06
+Test case Title: Book appointment with valid details
+Module Name: Appointment
+Preconditions:
+Patient logged in
+Doctor must be available
+Test steps:
+Select doctor
+Click Book Appointment
+Select date & time
+Enter problem description
+Click Confirm
+Test data:
+Doctor: Dr. Raj Mehta
+Date: 18/01/2026
+Time: 10:30 AM
+Reason: Chest pain
+Expected result:
+Appointment should be booked successfully and confirmation message displayed
+Actual Result: Appointment booked
+Status: Pass
+Remarks: Appointment ID generated
+
+---------------------Test Case 7----------------------
+Test case Id: HS_TC_07
+Test case Title: Book appointment without selecting time slot
+Module Name: Appointment
+Preconditions: Patient logged in
+Test steps:
+Select doctor
+Select date only
+Do not select time
+Click Confirm
+Test data: Date: 18/01/2026
+Expected result:
+System should show validation message for time slot required
+Actual Result: Validation shown
+Status: Pass
+Remarks: Correct validation
+
+
+
+
+****************** Module: Patient Profile / Medical Records
+---------------Test Case 8----------------------
+Test case Id: HS_TC_08
+Test case Title: View patient profile details
+Module Name: Patient Profile
+Preconditions: Patient logged in
+Test steps:
+Open Profile section
+Click View Profile
+Test data: N/A
+Expected result:
+Patient details like name, age, contact should display correctly
+Actual Result: Profile displayed
+Status: Pass
+Remarks: Correct details shown
+
+---------------Test Case 9------------------------
+Test case Id: HS_TC_09
+Test case Title: Upload medical report successfully
+Module Name: Medical Records
+Preconditions: Patient logged in
+Test steps:
+Open Medical Records
+Click Upload Report
+Select file
+Click Upload
+Test data: report.pdf
+Expected result:
+Medical report should upload successfully and visible in record list
+Actual Result: Uploaded successfully
+Status: Pass
+Remarks: File displayed
+
+--------------Test Case 10--------------------
+Test case Id: HS_TC_10
+Test case Title: Upload invalid file format
+Module Name: Medical Records
+Preconditions: Patient logged in
+Test steps:
+Click Upload Report
+Select unsupported file type
+Click Upload
+Test data: report.exe
+Expected result:
+System should show message “Invalid file format”
+Actual Result: Error displayed
+Status: Pass
+Remarks: Validation ok
+
+
+
+
+
+*************************** Module: Payment
+-------------------Test Case 11-------------------
+Test case Id: HS_TC_11
+Test case Title: Pay consultation fees successfully
+Module Name: Payment
+Preconditions: Appointment should be booked
+Test steps:
+Go to Payment section
+Select payment method
+Enter required details
+Click Pay Now
+Test data:
+Payment Method: UPI
+UPI ID: neha@upi
+Expected result:
+Payment should be successful and receipt generated
+Actual Result: Payment successful
+Status: Pass
+Remarks: Receipt generated
+
+------------Test Case 12------------
+Test case Id: HS_TC_12
+Test case Title: Verify payment failure case
+Module Name: Payment
+Preconditions: Appointment exists
+Test steps:
+Select payment by card
+Enter wrong card details
+Click Pay
+Test data:
+Card No: 1111 2222 3333 4444
+CVV: 000
+Expected result:
+Payment should fail and system should show error message
+Actual Result: Payment failed shown
+Status: Pass
+Remarks: Appointment not confirmed
+
+
+
+
+**************** Module: Appointment Cancellation
+--------------Test Case 13------------
+Test case Id: HS_TC_13
+Test case Title: Cancel appointment successfully
+Module Name: Appointment
+Preconditions: Appointment should be booked
+Test steps:
+Go to My Appointments
+Select appointment
+Click Cancel Appointment
+Confirm cancellation
+Test data: Appointment ID: AP_102
+Expected result:
+Appointment status should change to Cancelled
+Actual Result: Cancelled
+Status: Pass
+Remarks: Updated properly
+
+
+
+*********** Module: Logout
+----------Test Case 14-----------
+Test case Id: HS_TC_14
+Test case Title: Verify logout functionality
+Module Name: Logout
+Preconditions: Patient logged in
+Test steps:
+Click menu/profile
+Click Logout
+Test data: N/A
+Expected result:
+User should logout and redirect to login page
+Actual Result: Logged out successfully
+Status: Pass
+Remarks: Working fine
