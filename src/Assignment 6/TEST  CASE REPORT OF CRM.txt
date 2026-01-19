@@ -1,0 +1,140 @@
+//TEST CASE REPORT  OF Customer Relationship Management System
+***Module1: Login / Authentication
+
+ ----------Test Case 1-----------
+Test case Id: TC_01
+Test case Title: Verify login with valid credentials
+Module Name: Login
+Preconditions:
+User account must be already registered
+User must be on login page
+Test steps:
+Open CRM login page
+Enter valid username
+Enter valid password
+Click on Login button
+Test data:
+Username: admin@gmail.com
+Password: Admin@123
+Expected result:
+User should successfully login and dashboard should open
+Actual Result: Dashboard opened successfully
+Status: Pass
+Remarks: Working fine
+
+
+--------------TEST CASE 2----------------
+
+Test case Id: TC_02
+Test case Title: Verify login with invalid password
+Module Name: Login
+Preconditions: User exists
+Test steps:
+Open login page
+Enter valid username
+Enter wrong password
+Click Login
+Test data:
+Username: admin@gmail.com
+Password: abc123
+Expected result:
+System should show error message like “Invalid credentials” and login should fail
+Actual Result: Error message displayed
+Status: Pass
+Remarks: Proper validation shown
+
+------------TEST CASE 3-------
+Test case Id: TC_03
+Test case Title: Verify login when fields are blank
+Module Name: Login
+Preconditions: User on login page
+Test steps:
+Open login page
+Keep username blank
+Keep password blank
+Click Login
+Test data: Blank
+Expected result:
+System should show message “Fields cannot be empty”
+Actual Result: Validation shown
+Status: Pass
+Remarks: No crash
+
+**Module2: Customer / Client Management
+--------Test Case 4------
+
+Test case Id: TC_04
+Test case Title: Add new customer with valid details
+Module Name: Customer Management
+Preconditions: Admin/User logged in
+Test steps:
+Go to Customers section
+Click Add Customer
+Fill all details
+Click Save
+Test data:
+Name: Rohit Sharma
+Email: rohit@gmail.com
+Phone: 9876543210
+City: Mumbai
+Expected result:
+Customer record should be saved and shown in customer list
+Actual Result: Customer added successfully
+Status: Pass
+Remarks: Record displayed in list
+
+-----------Test Case 5------------
+
+Test case Id: TC_05
+Test case Title: Add customer with duplicate email id
+Module Name: Customer Management
+Preconditions: Same email already exists
+Test steps:
+Go to Add Customer
+Enter already existing email
+Click Save
+Test data: Email: rohit@gmail.com
+Expected result:
+System should not allow duplicate email and show message
+Actual Result: Duplicate message displayed
+Status: Pass
+Remarks: Email uniqueness working
+
+
+****MODULE 3 tasks management
+
+-------Test Case 6------
+Test case Id: TC_06
+Test case Title: Add follow-up task for customer
+Module Name: Tasks / Follow-up
+Preconditions: Customer must exist
+Test steps:
+Open customer details
+Click Add Follow-up
+Enter date and note
+Click Save
+Test data:
+Date: 18/01/2026
+Note: Call customer for pricing discussion
+
+Expected result:
+Follow-up task should be saved and visible in task list
+Actual Result: Follow-up saved
+Status: Pass
+Remarks: Added correctly
+
+------Test Case 7------
+Test case Id: TC_07
+Test case Title: Validate follow-up date cannot be past date
+Module Name: Tasks / Follow-up
+Preconditions: User logged in
+Test steps:
+Go to add follow-up
+Enter past date
+Save task
+Test data: Date: 01/01/2024
+Expected result:
+System should show validation message and not allow save
+Actual Result: Validation message shown
+Status: Pass
+Remarks: Proper date validation
